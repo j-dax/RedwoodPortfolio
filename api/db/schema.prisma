@@ -25,5 +25,5 @@ model Project {
   title       String
   brief       String
   description String
-  createdAt   DateTime
+  createdAt   String
 }

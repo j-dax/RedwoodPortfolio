@@ -1,6 +1,6 @@
-# Migration `20201211000901-project--created-at-removed--default------to-allow-user-to-set-datetime`
+# Migration `20201211011215-changed-project--created-at-to-string`
 
-This migration has been generated at 12/10/2020, 4:09:01 PM.
+This migration has been generated at 12/10/2020, 5:12:15 PM.
 You can check out the [state of the schema](./schema.prisma) after the migration.
 
 ## Database Steps
@@ -12,7 +12,7 @@ CREATE TABLE "new_Project" (
     "title" TEXT NOT NULL,
     "brief" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL
+    "createdAt" TEXT NOT NULL
 );
 INSERT INTO "new_Project" ("id", "title", "brief", "description", "createdAt") SELECT "id", "title", "brief", "description", "createdAt" FROM "Project";
 DROP TABLE "Project";
@@ -25,7 +25,7 @@ PRAGMA foreign_keys=ON
 
 ```diff
 diff --git schema.prisma schema.prisma
-migration 20201211000140-created-project-model..20201211000901-project--created-at-removed--default------to-allow-user-to-set-datetime
+migration 20201211002847-added-created-at..20201211011215-changed-project--created-at-to-string
 --- datamodel.dml
 +++ datamodel.dml
 @@ -1,9 +1,9 @@
@@ -43,8 +43,8 @@ migration 20201211000140-created-project-model..20201211000901-project--created-
    title       String
    brief       String
    description String
--  createdAt   DateTime @default(now())
-+  createdAt   DateTime
+-  createdAt   DateTime
++  createdAt   String
  }
 ```
 

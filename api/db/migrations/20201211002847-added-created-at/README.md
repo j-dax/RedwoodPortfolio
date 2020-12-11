@@ -1,6 +1,6 @@
-# Migration `20201211000140-created-project-model`
+# Migration `20201211002847-added-created-at`
 
-This migration has been generated at 12/10/2020, 4:01:40 PM.
+This migration has been generated at 12/10/2020, 4:28:47 PM.
 You can check out the [state of the schema](./schema.prisma) after the migration.
 
 ## Database Steps
@@ -11,7 +11,7 @@ CREATE TABLE "Project" (
     "title" TEXT NOT NULL,
     "brief" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    "createdAt" DATETIME NOT NULL
 )
 ```
 
@@ -19,7 +19,7 @@ CREATE TABLE "Project" (
 
 ```diff
 diff --git schema.prisma schema.prisma
-migration ..20201211000140-created-project-model
+migration ..20201211002847-added-created-at
 --- datamodel.dml
 +++ datamodel.dml
 @@ -1,0 +1,29 @@
@@ -50,7 +50,7 @@ migration ..20201211000140-created-project-model
 +  title       String
 +  brief       String
 +  description String
-+  createdAt   DateTime @default(now())
++  createdAt   DateTime
 +}
 ```
 

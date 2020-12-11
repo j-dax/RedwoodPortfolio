@@ -1,4 +1,4 @@
 # Prisma Migrate lockfile v1
 
-20201211000140-created-project-model
-20201211000901-project--created-at-removed--default------to-allow-user-to-set-datetime
+20201211002847-added-created-at
+20201211011215-changed-project--created-at-to-string
