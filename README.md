@@ -10,7 +10,7 @@ Complete the following:
 
 #### Authentication
 
-(Setup a free Netlify Identity)[https://redwoodjs.com/tutorial/authentication#netlify-identity-setup]
+[Complete configuration of Netlify Identity](https://redwoodjs.com/tutorial/authentication#netlify-identity-setup)
 
 create an empty file ".env" so dotenv can reference it later.
 
@@ -20,7 +20,7 @@ Make sure you have an account associated and authorized with netlify identity be
 
 #### Adding Projects
 
-Navigate to (/projects)[localhost:8910/projects] and add your project information. You'll want to customize your Have a look at (/listing)[localhost:8910/listing] and web/src/Pages/ProjectsListingPage to see how Project Briefs are listed. Configure the AboutPage to your liking.
+Navigate to [/projects](localhost:8910/projects) and add your project information. You'll want to customize your Have a look at [/listing](localhost:8910/listing) and web/src/Pages/ProjectsListingPage to see how Project Briefs are listed. Configure the AboutPage to your liking.
 
 ### Upcoming
 
