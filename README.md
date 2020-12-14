@@ -20,7 +20,7 @@ Make sure you have an account associated and authorized with netlify identity be
 
 #### Adding Projects
 
-Navigate to [/projects](localhost:8910/projects) and add your project information. You'll want to customize your Have a look at [/listing](localhost:8910/listing) and web/src/Pages/ProjectsListingPage to see how Project Briefs are listed. Configure the AboutPage to your liking.
+Navigate to [http://localhost:8910/projects](localhost:8910/projects) and add your project information. You'll want to customize your Have a look at [http://localhost:8910/listing](localhost:8910/listing) and web/src/Pages/ProjectsListingPage to see how Project Briefs are listed. Configure the AboutPage to your liking.
 
 ### Upcoming
 
@@ -29,3 +29,5 @@ Add individual project page that lists a project's attributes
 Clean up presentation of AboutPage, ProjectsListingPage, SigninPage, ProjectView, ProjectBrief
 
 Remove personal information from AboutPage
+
+https on authenticated pages
