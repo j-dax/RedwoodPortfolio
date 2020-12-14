@@ -1,24 +1,31 @@
-# Redwood
+# Redwood Portfolio
+
+A small project a simple, personal website.
 
 > **WARNING:** RedwoodJS software has not reached a stable version 1.0 and should not be considered suitable for production use. In the "make it work; make it right; make it fast" paradigm, Redwood is in the later stages of the "make it work" phase.
 
-## Getting Started
-- [Tutorial](https://redwoodjs.com/tutorial/welcome-to-redwood): getting started and complete overview guide.
-- [Docs](https://redwoodjs.com/docs/introduction): using the Redwood Router, handling assets and files, list of command-line tools, and more.
-- [Redwood Community](https://community.redwoodjs.com): get help, share tips and tricks, and collaborate on everything about RedwoodJS.
-
 ### Setup
 
-We use Yarn as our package manager. To get the dependencies installed, just do this in the root directory:
+Complete the following:
 
-```terminal
-yarn install
-```
+#### Authentication
 
-### Fire it up
+(Setup a free Netlify Identity)[https://redwoodjs.com/tutorial/authentication#netlify-identity-setup]
 
-```terminal
-yarn redwood dev
-```
+create an empty file ".env" so dotenv can reference it later.
 
-Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`. 
+```NETLIFY_IDENTITY=https://{}.netlify.app/.netlify/identity```
+
+Make sure you have an account associated and authorized with netlify identity before proceeding. You'll need it to access the database from the webapp.
+
+#### Adding Projects
+
+Navigate to (/projects)[localhost:8910/projects] and add your project information. You'll want to customize your Have a look at (/listing)[localhost:8910/listing] and web/src/Pages/ProjectsListingPage to see how Project Briefs are listed. Configure the AboutPage to your liking.
+
+### Upcoming
+
+Add individual project page that lists a project's attributes
+
+Clean up presentation of AboutPage, ProjectsListingPage, SigninPage, ProjectView, ProjectBrief
+
+Remove personal information from AboutPage
