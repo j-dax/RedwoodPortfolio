@@ -20,7 +20,7 @@ Make sure you have an account associated and authorized with netlify identity be
 
 #### Adding Projects
 
-Navigate to [http://localhost:8910/projects](localhost:8910/projects) and add your project information. You'll want to customize your Have a look at [http://localhost:8910/listing](localhost:8910/listing) and web/src/Pages/ProjectsListingPage to see how Project Briefs are listed. Configure the AboutPage to your liking.
+Navigate to [/projects](http://localhost:8910/projects) and add your project information. Have a look at [/listing](http://localhost:8910/listing) and web/src/Pages/ProjectsListingPage to see how Project Briefs are listed. Configure the AboutPage to your liking.
 
 ### Upcoming
 
