@@ -1,3 +1,5 @@
+import ProjectBrief from "src/components/ProjectBrief/ProjectBrief"
+
 export const QUERY = gql`
   query PROJECTS {
     projects {
@@ -17,5 +19,9 @@ export const Empty = () => <div>Empty</div>
 export const Failure = ({ error }) => <div>Error: {error.message}</div>
 
 export const Success = ({ projects }) => {
-  return JSON.stringify(projects)
+  return <div>
+    {projects.map((project, index)=>
+      <ProjectBrief key={index} project={project} />
+    )}
+    </div>
 }

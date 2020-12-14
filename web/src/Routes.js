@@ -7,23 +7,25 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route, Private } from '@redwoodjs/router'
 
 const Routes = () => {
   return (
     <Router>
       {/* public routes */}
-      <Route path="/test" page={TestPage} name="test" />
+      <Route path="/signin" page={SigninPage} name="signin" />
       <Route path="/listing" page={ProjectsListingPage} name="projectsListing" />
       <Route path="/" page={AboutPage} name="about" />
+
+      {/* Auth restricted routes */}
+      <Private unauthenticated="about">
+        <Route path="/admin/projects/new" page={NewProjectPage} name="newProject" />
+        <Route path="/admin/projects/{id:Int}/edit" page={EditProjectPage} name="editProject" />
+        <Route path="/admin/projects/{id:Int}" page={ProjectPage} name="project" />
+        <Route path="/admin/projects" page={ProjectsPage} name="projects" />
+      </Private>
+
       <Route notfound page={NotFoundPage} />
-
-      {/* TODO: Auth restricted routes */}
-      <Route path="/projects/new" page={NewProjectPage} name="newProject" />
-      <Route path="/projects/{id:Int}/edit" page={EditProjectPage} name="editProject" />
-      <Route path="/projects/{id:Int}" page={ProjectPage} name="project" />
-      <Route path="/projects" page={ProjectsPage} name="projects" />
-
     </Router>
   )
 }

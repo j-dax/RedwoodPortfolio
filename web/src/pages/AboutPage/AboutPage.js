@@ -1,23 +1,43 @@
+import { makeStyles } from '@material-ui/core'
 import { Link, routes } from '@redwoodjs/router'
-import ProjectBriefCell from 'src/components/ProjectBriefCell/ProjectBriefCell'
-import ProjectViewCell from 'src/components/ProjectViewCell/ProjectViewCell'
-import ProjectCell from 'src/components/ProjectCell/ProjectCell'
+import GlobalLayout from 'src/layouts/GlobalLayout'
 
-const hatsuneMikeImg = "https://danbooru.donmai.us/data/__hatsune_miku_vocaloid_and_1_more_drawn_by_akino_coto__e130aa1d30bd813d30a05c025b62929d.png"
+import profile from "./profile.jpg"
+
+const githubLink = "https://github.com/j-dax/"
+const linkedInLink = "https://www.linkedin.com/in/piazzam/"
+
+const useStyles = makeStyles({
+  profileImage: {
+    height: 100
+  }
+})
 
 const AboutPage = () => {
+  const classes = useStyles()
   return (
     <>
-      <h2>Dalton : [   ]</h2>
-      <h3>Greatest Hits&#215C;</h3>
-      <a href={hatsuneMikeImg}>
-        Danbooru
-      </a>
-      <img height="200"
-        src={hatsuneMikeImg}
-      />
-      <h4>maybe github and stuff. other stuff about cool physics stuff</h4>
-      <p>Tempore libero error optio et commodi possimus quia id. Officia minima et earum. Voluptatem aut magni quo. Animi voluptate voluptas asperiores et minima et ea. Necessitatibus pariatur accusamus soluta non nemo nulla quis eveniet.</p>
+      <GlobalLayout>
+        <h2>Matthew Piazza</h2>
+        <hr />
+        <h3>Contact Information</h3>
+        <div>
+
+          <img className={classes.profileImage} src={profile} alt="personal image of Matthew Piazza" />
+
+          <a href={githubLink}>
+            GitHub
+          </a>
+
+          <a href={linkedInLink}>
+            LinkedIn
+          </a>
+
+        </div>
+        <hr />
+
+        <h3>Top Projects</h3>
+      </GlobalLayout>
     </>
   )
 }

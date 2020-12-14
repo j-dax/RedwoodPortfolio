@@ -1,8 +1,10 @@
 import { Link, routes } from '@redwoodjs/router'
 import { Flash } from '@redwoodjs/web'
+import GlobalLayout from 'src/layouts/GlobalLayout'
 
 const ProjectsLayout = (props) => {
-  return (
+  return (<>
+    <GlobalLayout />
     <div className="rw-scaffold">
       <Flash timeout={1000} />
       <header className="rw-header">
@@ -17,7 +19,7 @@ const ProjectsLayout = (props) => {
       </header>
       <main className="rw-main">{props.children}</main>
     </div>
-  )
+  </>)
 }
 
 export default ProjectsLayout

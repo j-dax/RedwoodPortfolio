@@ -1,11 +1,11 @@
 import { render } from '@redwoodjs/testing'
 
-import TestPage from './TestPage'
+import CommonHeader from './CommonHeader'
 
-describe('TestPage', () => {
+describe('CommonHeader', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<TestPage />)
+      render(<CommonHeader />)
     }).not.toThrow()
   })
 })
