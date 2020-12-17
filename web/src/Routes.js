@@ -15,6 +15,7 @@ const Routes = () => {
       {/* public routes */}
       <Route path="/signin" page={SigninPage} name="signin" />
       <Route path="/listing" page={ProjectsListingPage} name="projectsListing" />
+      <Route path="/listing/{id:Int}" page={ProjectViewPage} name="projectView" />
       <Route path="/" page={AboutPage} name="about" />
 
       {/* Auth restricted routes */}

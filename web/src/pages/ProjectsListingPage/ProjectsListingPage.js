@@ -1,11 +1,14 @@
-import { Link, routes } from '@redwoodjs/router'
 import GlobalLayout from 'src/layouts/GlobalLayout'
-import ProjectsListingViewCell from 'src/components/ProjectsListingViewCell/ProjectsListingViewCell'
+import ProjectView from 'src/components/ProjectView/ProjectView'
+
+import projects from 'src/projects/projects'
 
 const ProjectsListingPage = () => {
-  return ( <>
+  return (<>
     <GlobalLayout>
-      <ProjectsListingViewCell />
+      <div>
+        { projects.map((_, index)=><ProjectView key={index} index={index} />) }
+      </div>
     </GlobalLayout>
   </>)
 }

@@ -4,7 +4,7 @@ import {
   IconButton,
   Typography,
 } from '@material-ui/core'
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline'
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 
 const AboutLink = ({ classes }) => {
   return (
@@ -12,9 +12,9 @@ const AboutLink = ({ classes }) => {
       to={routes.about()}>
       <IconButton edge="start" color="inherit" aria-label="menu"
         className={classes.menuButton}>
-        <PersonOutlineIcon />
+        <HomeOutlinedIcon />
         <Typography variant="h6" className={classes.title}>
-          About Me
+          Home
         </Typography>
       </IconButton>
     </NavLink>

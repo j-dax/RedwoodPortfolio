@@ -44,7 +44,7 @@ const useStyles = makeStyles({
     textAlign: "center"
   },
   appBar: {
-    marginBottom: 5
+    backgroundColor: "#000000"
   }
 })
 

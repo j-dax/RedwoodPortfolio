@@ -1,8 +1,18 @@
 import TopNav from 'src/components/TopNav'
-import { Toolbar } from '@material-ui/core'
 
+import { Toolbar } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles({
+  centerMargin: {
+    display: "flex",
+    justifyContent: "space-around",
+    alignContent: "space-between"
+  }
+})
 
 const GlobalLayout = ({ children }) => {
+  const classes = useStyles()
   return <>
     <header>
       <nav>
@@ -12,7 +22,7 @@ const GlobalLayout = ({ children }) => {
         from appearing under the toolbar */}
       <Toolbar />
     </header>
-    {children}
+    <main className={classes.centerMargin}>{children}</main>
   </>
 }
 
