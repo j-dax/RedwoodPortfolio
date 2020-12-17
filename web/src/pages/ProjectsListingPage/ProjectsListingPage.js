@@ -1,5 +1,5 @@
 import GlobalLayout from 'src/layouts/GlobalLayout'
-import ProjectView from 'src/components/ProjectView/ProjectView'
+import ProjectsListingView from 'src/components/ProjectsListingView/ProjectsListingView'
 
 import projects from 'src/projects/projects'
 
@@ -7,7 +7,7 @@ const ProjectsListingPage = () => {
   return (<>
     <GlobalLayout>
       <div>
-        { projects.map((_, index)=><ProjectView key={index} index={index} />) }
+        { projects.map((_, index)=><ProjectsListingView key={index} index={index} />) }
       </div>
     </GlobalLayout>
   </>)

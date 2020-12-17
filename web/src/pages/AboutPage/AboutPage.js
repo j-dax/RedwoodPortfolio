@@ -1,5 +1,5 @@
 import GlobalLayout from 'src/layouts/GlobalLayout'
-import ProjectView from 'src/components/ProjectView'
+import ProjectsListingView from 'src/components/ProjectsListingView'
 
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -60,11 +60,11 @@ const AboutPage = () => {
               <h3>Top Projects</h3>
               <Grid item>
 
-                <ProjectView index={0} />
-                <ProjectView index={1} />
-                <ProjectView index={2} />
-                <ProjectView index={3} />
-                <ProjectView index={4} />
+                <ProjectsListingView index={0} />
+                <ProjectsListingView index={1} />
+                <ProjectsListingView index={2} />
+                <ProjectsListingView index={3} />
+                <ProjectsListingView index={4} />
 
               </Grid>
             </Grid>

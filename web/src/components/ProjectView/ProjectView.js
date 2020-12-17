@@ -1,12 +1,27 @@
-import { Link } from '@redwoodjs/router'
-import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import GitHubIcon from '@material-ui/icons/GitHub';
+
 import projects from 'src/projects/projects'
+
+const template = {
+  title: "",
+  date: "",
+  tags: [],
+  brief: [
+  ],
+  outcomes: [
+  ],
+  link: ""
+}
 
 const useStyles = makeStyles({
   page: {
     display: "display",
     textAlign: "center",
+    marginLeft: "16.6%",
+    marginRight: "16.6%",
+    backgroundColor: "#ebebeb",
   },
   flexContainer: {
     display: "flex",
@@ -17,7 +32,6 @@ const useStyles = makeStyles({
     margin: 8,
   },
   title: {
-    marginLeft: 8
   },
   tags: {
     marginLeft: 8,
@@ -25,41 +39,55 @@ const useStyles = makeStyles({
   date: {
     position: "relative",
     marginLeft: "auto",
-    marginRight: 8,
+    paddingRight: 8,
   },
-  brief: {
+  about: {
     color: "#6b6b6b",
-    marginLeft: 8,
+    marginBottom: 16
   },
-  gridBackground: {
-    backgroundColor: "#ebebeb",
-    borderRadius: 16,
-    marginBottom: 16,
-  }
 })
 
-const ProjectView = ({ index }) => {
-  const project = projects[index]()
+const getProject = (index) => {
+  if (index < projects.length)
+    return projects[index]()
+  else
+    return template
+}
+
+const ProjectView = ({ id }) => {
   const classes = useStyles()
+  const project = getProject(id)
   return (
-    <Link to={`listing/${index}`}>
-      <Grid container key={index} className={classes.gridBackground}
-        direction="column">
-        <h3 className={classes.title}>{project.title}</h3>
-        <div className={classes.flexContainer}>
-          {project.tags.map((tag, index)=>
-            <span key={index} className={classes.tags}>{tag}</span>
-          )}
-          <span className={classes.date}>{project.date}</span>
-        </div>
-        <div className={classes.displayContainer}>
-          <div className={classes.brief}>
-            {project.brief.map((p, index)=><span key={index}>{p}</span>)}
-          </div>
-        </div>
-      </Grid>
-    </Link>
-    )
+    <>
+        <Grid container className={classes.page}
+          direction="column" alignItems="column" justify="space-between">
+
+          <h2 className={classes.title}>{project.title}</h2>
+
+          { project.link.length > 0 && <a href={project.link}><GitHubIcon />View on Github</a> }
+
+          <Grid container item className={classes.flexContainer}>
+            {project.tags.map((tag, index)=>
+            <span className={classes.tags}>{tag}{(index < project.tags.length - 1) ? "," : ""}</span>)}
+            <span className={classes.date}>{project.date}</span>
+          </Grid>
+
+          <Grid container item className={classes.displayContainer}
+            direction="column" alignItems="center" justify="space-between">
+
+            <Grid item className={classes.about}>
+              {project.brief.map(p=>p)}
+            </Grid>
+
+            <Grid item className={classes.outcomes}>
+              {project.outcomes}
+            </Grid>
+
+          </Grid>
+
+        </Grid>
+    </>
+  )
 }
 
 export default ProjectView
